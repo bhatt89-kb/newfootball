@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>StadiumOS GenAI — FIFA World Cup 2026 Operations &amp; Fan Experience</title>
+<meta name="description" content="GenAI-enabled stadium operations and fan-experience console for FIFA World Cup 2026 host venues." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<a class="skip-link" href="#main-panel">Skip to main content</a>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker__track">
+    <span>GATE A · LOW CONGESTION</span><span class="dot">●</span>
+    <span>SHUTTLE LINE 2 · ON TIME</span><span class="dot">●</span>
+    <span>WELCOME · BIENVENIDOS · BIENVENUE · 歓迎 · स्वागत है</span><span class="dot">●</span>
+    <span>SUSTAINABILITY TIP · USE THE REUSABLE CUP SCHEME</span><span class="dot">●</span>
+    <span>ACCESSIBLE SEATING · SOUTH CONCOURSE · STEP-FREE</span><span class="dot">●</span>
+    <span>GATE A · LOW CONGESTION</span><span class="dot">●</span>
+    <span>SHUTTLE LINE 2 · ON TIME</span><span class="dot">●</span>
+    <span>WELCOME · BIENVENIDOS · BIENVENUE · 歓迎 · स्वागत है</span><span class="dot">●</span>
+  </div>
+</div>
+
+<header class="app-header">
+  <div class="brand">
+    <div class="brand__mark" aria-hidden="true">OS</div>
+    <div>
+      <p class="brand__title">StadiumOS GenAI</p>
+      <p class="brand__subtitle">FIFA World Cup 2026 · Operations &amp; Fan Experience Console</p>
+    </div>
+  </div>
+  <div class="toolbar" role="group" aria-label="Accessibility and connection controls">
+    <span id="apiStatus" class="status-pill" data-state="checking"><span class="status-pill__dot"></span><span id="apiStatusText">Checking backend…</span></span>
+    <button type="button" id="contrastToggle" aria-pressed="false">High contrast</button>
+    <button type="button" id="textSizeToggle" aria-pressed="false">Large text</button>
+    <label for="langSelect" class="visually-hidden">Interface language</label>
+    <select id="langSelect" aria-label="Assistant response language">
+      <option value="en">English</option>
+      <option value="es">Español</option>
+      <option value="fr">Français</option>
+      <option value="pt">Português</option>
+      <option value="de">Deutsch</option>
+      <option value="ar">العربية</option>
+      <option value="hi">हिन्दी</option>
+      <option value="zh">中文</option>
+      <option value="ja">日本語</option>
+      <option value="ko">한국어</option>
+    </select>
+  </div>
+</header>
+
+<div class="app-body">
+  <nav class="module-nav" aria-label="Feature modules">
+    <ul class="module-nav__list" role="tablist" aria-orientation="vertical" id="tabList">
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" data-module="overview"><span class="module-tab__icon" aria-hidden="true">🏟️</span> Overview</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-chat" aria-controls="panel-chat" aria-selected="false" data-module="chat"><span class="module-tab__icon" aria-hidden="true">💬</span> Ask Ana</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-navigate" aria-controls="panel-navigate" aria-selected="false" data-module="navigate"><span class="module-tab__icon" aria-hidden="true">🧭</span> Navigate</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-crowd" aria-controls="panel-crowd" aria-selected="false" data-module="crowd"><span class="module-tab__icon" aria-hidden="true">📊</span> Crowd Pulse</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-transport" aria-controls="panel-transport" aria-selected="false" data-module="transport"><span class="module-tab__icon" aria-hidden="true">🚌</span> Transport</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-accessibility" aria-controls="panel-accessibility" aria-selected="false" data-module="accessibility"><span class="module-tab__icon" aria-hidden="true">♿</span> Accessibility</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-sustainability" aria-controls="panel-sustainability" aria-selected="false" data-module="sustainability"><span class="module-tab__icon" aria-hidden="true">🌱</span> Sustainability</button></li>
+      <li role="presentation"><button class="module-tab" role="tab" id="tab-emergency" aria-controls="panel-emergency" aria-selected="false" data-module="emergency"><span class="module-tab__icon" aria-hidden="true">🚨</span> Emergency</button></li>
+    </ul>
+  </nav>
+
+  <main class="module-panel" id="main-panel">
+
+    <!-- OVERVIEW -->
+    <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
+      <div class="hero-card">
+        <div class="hero-card__top">
+          <div>
+            <p class="hero-card__eyebrow">FIFA World Cup 2026 · Host Venue Console</p>
+            <h1 class="hero-card__title">Matchday Operations Overview</h1>
+            <p class="hero-card__lede">Ana puts a GenAI reasoning layer over deterministic, safety-critical operational
+              logic — every answer below still works, correct and safe, even if the AI provider is unreachable.</p>
+          </div>
+          <div class="hero-clock">
+            <span id="heroDate">—</span>
+            <strong id="heroTime">--:--:--</strong>
+          </div>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card"><div class="stat-card__value">48 / 104</div><div class="stat-card__label">Teams / matches, WC 2026</div></div>
+          <div class="stat-card"><div class="stat-card__value">16</div><div class="stat-card__label">Host cities, 3 countries</div></div>
+          <div class="stat-card"><div class="stat-card__value">7</div><div class="stat-card__label">GenAI-enabled modules</div></div>
+          <div class="stat-card"><div class="stat-card__value">10</div><div class="stat-card__label">Languages supported</div></div>
+        </div>
+      </div>
+
+      <p class="section-heading">Jump to a module</p>
+      <div class="quick-tiles" id="overviewTiles" role="group" aria-label="Jump to a module">
+        <button type="button" class="quick-tile" data-jump="tab-chat"><span class="quick-tile__icon" aria-hidden="true">💬</span><span class="quick-tile__title">Ask Ana</span><span class="quick-tile__desc">Multilingual chat for any matchday question.</span></button>
+        <button type="button" class="quick-tile" data-jump="tab-navigate"><span class="quick-tile__icon" aria-hidden="true">🧭</span><span class="quick-tile__title">Navigate</span><span class="quick-tile__desc">Turn-by-turn wayfinding, step-free routes included.</span></button>
+        <button type="button" class="quick-tile" data-jump="tab-crowd"><span class="quick-tile__icon" aria-hidden="true">📊</span><span class="quick-tile__title">Crowd Pulse</span><span class="quick-tile__desc">Live-style occupancy monitoring and alerting.</span></button>
+        <button type="button" class="quick-tile" data-jump="tab-transport"><span class="quick-tile__icon" aria-hidden="true">🚌</span><span class="quick-tile__title">Transport</span><span class="quick-tile__desc">Compare parking, shuttle, and transit options.</span></button>
+        <button type="button" class="quick-tile" data-jump="tab-accessibility"><span class="quick-tile__icon" aria-hidden="true">♿</span><span class="quick-tile__title">Accessibility</span><span class="quick-tile__desc">Grounded guidance — never invented.</span></button>
+        <button type="button" class="quick-tile" data-jump="tab-sustainability"><span class="quick-tile__icon" aria-hidden="true">🌱</span><span class="quick-tile__title">Sustainability</span><span class="quick-tile__desc">Personalized, actionable green tips.</span></button>
+        <button type="button" class="quick-tile" data-jump="tab-emergency"><span class="quick-tile__icon" aria-hidden="true">🚨</span><span class="quick-tile__title">Emergency</span><span class="quick-tile__desc">Human-escalation-first safety guidance.</span></button>
+      </div>
+    </section>
+
+    <!-- CHAT -->
+    <section id="panel-chat" role="tabpanel" aria-labelledby="tab-chat" tabindex="0" hidden>
+      <h1 class="panel-heading">💬 Ask Ana</h1>
+      <p class="panel-lede">Your multilingual GenAI fan assistant. Ask about directions, accessibility, crowd conditions, transport, or anything else about matchday.</p>
+      <div class="card">
+        <div class="chat-log" id="chatLog" aria-live="polite" aria-label="Conversation with Ana"></div>
+        <div class="suggestion-row" id="chatSuggestions">
+          <button type="button" class="suggestion-chip" data-fill="How do I get to Gate B?">How do I get to Gate B?</button>
+          <button type="button" class="suggestion-chip" data-fill="Where is the nearest accessible seating?">Accessible seating nearby</button>
+          <button type="button" class="suggestion-chip" data-fill="Is Concourse North busy right now?">Is North busy right now?</button>
+          <button type="button" class="suggestion-chip" data-fill="What's the best way to get here without a car?">Best way here without a car</button>
+        </div>
+        <form id="chatForm">
+          <label for="chatInput">Message Ana</label>
+          <input type="text" id="chatInput" maxlength="1000" placeholder="e.g. How do I get to Gate B?" autocomplete="off" />
+          <button type="submit" class="btn-primary">Send</button>
+        </form>
+        <div class="chat-actions" id="chatActions"></div>
+      </div>
+    </section>
+
+    <!-- NAVIGATE -->
+    <section id="panel-navigate" role="tabpanel" aria-labelledby="tab-navigate" tabindex="0" hidden>
+      <h1 class="panel-heading">🧭 Navigate</h1>
+      <p class="panel-lede">AI-narrated turn-by-turn wayfinding across the venue, with accessible-route support.</p>
+      <div class="card">
+        <form id="navForm">
+          <label for="navOrigin">From</label>
+          <input type="text" id="navOrigin" list="zoneList" value="Gate A" />
+          <label for="navDest">To</label>
+          <input type="text" id="navDest" list="zoneList" value="Family Zone" />
+          <datalist id="zoneList">
+            <option value="Gate A"></option><option value="Gate B"></option><option value="Gate C"></option>
+            <option value="Concourse North"></option><option value="Concourse East"></option>
+            <option value="Concourse West"></option><option value="Concourse South"></option>
+            <option value="Section 101 120"></option><option value="Section 201 220"></option>
+            <option value="Section 301 320"></option><option value="Section 401 420"></option>
+            <option value="Accessible Seating"></option><option value="Family Zone"></option>
+            <option value="Food Court North"></option><option value="Medical Station"></option>
+            <option value="Press Zone"></option>
+          </datalist>
+          <fieldset>
+            <legend>Accessibility needs</legend>
+            <div class="checkbox-row"><input type="checkbox" id="needWheelchair" value="wheelchair" /><label for="needWheelchair">Wheelchair / step-free route</label></div>
+          </fieldset>
+          <button type="submit" class="btn-primary">Get route</button>
+        </form>
+        <div id="navResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- CROWD -->
+    <section id="panel-crowd" role="tabpanel" aria-labelledby="tab-crowd" tabindex="0" hidden>
+      <h1 class="panel-heading">📊 Crowd Pulse</h1>
+      <p class="panel-lede">Live-style occupancy readings feed a rule-based safety engine plus a GenAI operator briefing, so alerts fire even if the AI provider is unreachable.</p>
+      <div class="card pulse-wrap">
+        <div class="pulse-ring" aria-hidden="true">
+          <svg width="140" height="140" viewBox="0 0 140 140">
+            <circle class="pulse-ring__bg" cx="70" cy="70" r="60"></circle>
+            <circle class="pulse-ring__value" id="pulseCircle" cx="70" cy="70" r="60" stroke-dasharray="377" stroke-dashoffset="377"></circle>
+          </svg>
+          <div class="pulse-ring__label" id="pulseLabel">0%</div>
+        </div>
+        <div style="flex:1; min-width:220px;">
+          <p style="margin:0 0 0.4rem 0; color:var(--floodlight-dim); font-size:0.85rem;">Average occupancy across monitored zones</p>
+          <p style="margin:0; font-family: var(--font-mono); font-size:0.85rem;" id="pulseSummaryLine">Add zone readings to begin monitoring.</p>
+        </div>
+      </div>
+      <div class="card">
+        <form id="crowdForm">
+          <div id="zoneRows"></div>
+          <button type="button" class="btn-primary" id="addZoneBtn" style="background:var(--pitch-green-700); color: var(--floodlight); margin-bottom:0.8rem;">+ Add zone reading</button>
+          <br/>
+          <button type="submit" class="btn-primary">Analyze crowd</button>
+        </form>
+        <div id="crowdResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- TRANSPORT -->
+    <section id="panel-transport" role="tabpanel" aria-labelledby="tab-transport" tabindex="0" hidden>
+      <h1 class="panel-heading">🚌 Transport</h1>
+      <p class="panel-lede">Compare parking, shuttle, and public-transit options, ranked for you in real time — including live lot occupancy and step-free filtering.</p>
+      <div class="card">
+        <form id="transportForm">
+          <label for="transportMode">Mode</label>
+          <select id="transportMode">
+            <option value="">Any (compare all)</option>
+            <option value="car">Driving / parking</option>
+            <option value="shuttle">Shuttle</option>
+            <option value="transit">Public transit</option>
+          </select>
+          <label for="transportParty">Party size</label>
+          <input type="number" id="transportParty" min="1" max="20" value="1" />
+          <label for="transportKickoff">Minutes to kickoff (optional)</label>
+          <input type="number" id="transportKickoff" min="0" max="600" placeholder="e.g. 60" />
+          <fieldset>
+            <legend>Accessibility needs</legend>
+            <div class="checkbox-row"><input type="checkbox" id="transportWheelchair" value="wheelchair" /><label for="transportWheelchair">Wheelchair / step-free option</label></div>
+          </fieldset>
+          <button type="submit" class="btn-primary">Find best option</button>
+        </form>
+        <div id="transportResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- ACCESSIBILITY -->
+    <section id="panel-accessibility" role="tabpanel" aria-labelledby="tab-accessibility" tabindex="0" hidden>
+      <h1 class="panel-heading">♿ Accessibility Concierge</h1>
+      <p class="panel-lede">Ask about wheelchair routes, sensory rooms, assistive listening devices, or companion policies. Answers are grounded only in verified venue resources — never invented.</p>
+      <div class="card">
+        <form id="accForm">
+          <label for="accQuery">Your question</label>
+          <input type="text" id="accQuery" value="Where can I find accessible seating?" maxlength="500" />
+          <fieldset>
+            <legend>Your needs (optional)</legend>
+            <div class="checkbox-row"><input type="checkbox" class="accNeed" value="wheelchair" id="accWheelchair"/><label for="accWheelchair">Wheelchair user</label></div>
+            <div class="checkbox-row"><input type="checkbox" class="accNeed" value="low vision" id="accVision"/><label for="accVision">Low vision</label></div>
+            <div class="checkbox-row"><input type="checkbox" class="accNeed" value="hearing" id="accHearing"/><label for="accHearing">Deaf / hard of hearing</label></div>
+            <div class="checkbox-row"><input type="checkbox" class="accNeed" value="sensory sensitivity" id="accSensory"/><label for="accSensory">Sensory sensitivity</label></div>
+          </fieldset>
+          <button type="submit" class="btn-primary">Ask</button>
+        </form>
+        <div id="accResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- SUSTAINABILITY -->
+    <section id="panel-sustainability" role="tabpanel" aria-labelledby="tab-sustainability" tabindex="0" hidden>
+      <h1 class="panel-heading">🌱 Sustainability Tips</h1>
+      <p class="panel-lede">Personalized, actionable sustainability guidance for your matchday.</p>
+      <div class="card">
+        <form id="susForm">
+          <label for="susContext">Tell Ana about your trip</label>
+          <input type="text" id="susContext" value="I'm driving to the match with two friends" maxlength="300" />
+          <button type="submit" class="btn-primary">Get tips</button>
+        </form>
+        <div id="susResult" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- EMERGENCY -->
+    <section id="panel-emergency" role="tabpanel" aria-labelledby="tab-emergency" tabindex="0" hidden>
+      <h1 class="panel-heading">🚨 Emergency Decision Support</h1>
+      <div class="emergency-banner">
+        <strong>Not a replacement for emergency services.</strong> For any life-threatening emergency, contact stadium security or local emergency services immediately.
+      </div>
+      <div class="card">
+        <form id="emergForm">
+          <label for="emergSituation">Describe what's happening</label>
+          <input type="text" id="emergSituation" placeholder="e.g. A fan has collapsed near section 201" maxlength="300" />
+          <label for="emergZone">Zone (optional)</label>
+          <input type="text" id="emergZone" placeholder="e.g. Section 201" maxlength="40" />
+          <button type="submit" class="btn-primary" style="background:var(--alert-coral); color:#fff;">Get guidance</button>
+        </form>
+        <div id="emergResult" aria-live="assertive"></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="app-footer">
+  StadiumOS GenAI — built for Hack2Skill Virtual Prompt War Challenge 4. Works fully offline in rule-based fallback mode; connect a backend for live GenAI responses.
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>
